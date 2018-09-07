@@ -4,16 +4,15 @@ var watch = require('gulp-watch')
  
 gulp.task('compile', shell.task([
   'clear',
-  'make',
-  './program'
+  'clang app/program.c -o app/program',
 ]))
 
 gulp.task('watch', function() {
-    gulp.watch('./*.c', ['compile']);
+    gulp.watch('./**/*.c', ['compile']);
 });
 
 
 
 gulp.task('default' ,function() {
-    gulp.watch('./*.c', ['compile']);
+    gulp.watch('./**/*.c', ['compile']);
 });
