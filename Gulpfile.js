@@ -1,9 +1,11 @@
 var gulp  = require('gulp')
 var shell = require('gulp-shell')
 var watch = require('gulp-watch')
+var gutil = require('gulp-util')
+
  
 gulp.task('compile', shell.task([
-  'clang app/program.c -o app/program',
+  `clang ${gutil.env.FILES_TO_COMPILE} -o ${gutil.env.FILE_OUTPUT}`,
 ]))
 
 gulp.task('watch', function() {
