@@ -13,7 +13,6 @@ gulp.task('watch', function() {
 });
 
 
-
-gulp.task('default' ,function() {
+gulp.task('default', ['compile'] ,function() {
     gulp.watch('./**/*.c', ['compile']);
 });
